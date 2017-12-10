@@ -30,4 +30,20 @@ public class Sorts{
 	    }
 	}
     }
+    public static void bubbleSort(int[] data){
+	boolean sorted = false;
+	int length = data.length;
+	while(!sorted){
+	    length--;
+	    sorted = true;
+	    for(int x=0; x < length; x++){
+		if(data[x] > data[x+1]){
+		    int temp = data[x];
+		    data[x] = data[x+1];
+		    data[x+1] = temp;
+		    sorted = false;
+		}
+	    }
+	}
+    }
 }
