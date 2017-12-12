@@ -1,6 +1,6 @@
 public class Sorts{
     public static String name(){
-	return "01.Belkebir.Imad";
+	return "10.Belkebir.Imad";
     }
     public static void selectionSort(int[] data){
 	for(int x=0; x<data.length-1; x++){
