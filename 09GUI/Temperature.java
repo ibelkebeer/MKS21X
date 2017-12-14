@@ -24,11 +24,15 @@ public class Temperature extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
 	String func = e.getActionCommand();
-	if(func.equals("Convert to Farenheit")){
-	    temp.setText(String.valueOf(CtoF(Double.parseDouble(temp.getText()))));
-	}
-	if(func.equals("Convert to Celsius")){
-	    temp.setText(String.valueOf(FtoC(Double.parseDouble(temp.getText()))));
+	try{
+	    if(func.equals("Convert to Farenheit")){
+		temp.setText(String.valueOf(CtoF(Double.parseDouble(temp.getText()))));
+	    }
+	    if(func.equals("Convert to Celsius")){
+		temp.setText(String.valueOf(FtoC(Double.parseDouble(temp.getText()))));
+	    }
+	}catch(NumberFormatException t){
+	    temp.setText("Put in a double");
 	}
     }
     public static double FtoC(double t){
@@ -38,7 +42,7 @@ public class Temperature extends JFrame implements ActionListener{
 	return t * (9.0/5) + 32;
     }
     public static void main(String[]args){
-	GUI g = new GUI();
+	Temperature g = new Temperature();
 	g.setVisible(true);
     }
 }
